@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <style> 
+            body {
+                background-color: black;
+            } 
+            
+            #natur {
+                margin: 40px auto; /*Midtstiller div-elementet med bilda*/ 
+                display:flex; /*Gjer om til ein flexbox*/
+                width: 800px;
+                height: 320px;
+            }
+
+            #natur > div { /*Alle div-element på fyrste nivå i #dyr*/
+                flex: 1; /*Alle div-elementa tek like mykje plass*/
+                background-color: seagreen;
+                border: 4px solid white;
+                opacity: 0.6; /* Berre 60 % synleg */
+                background-position: center center; /*Midtstiller bakgrunnsbilda*/ 
+                background-size: cover; /* Bakgrunnsbildet dekkjer heile div-elementet */ 
+                transition: 0.5s; /* Overgangen tek eit halvt sekund */
+            }
+
+            #natur > div:hover {/*Pilmarkøren over div-elementa inne i #dyr */
+                flex: 4; /*Bildet blir fire gonger så stort*/ 
+                transform: scale(1.2); /*Skalerer til 120 %*/ 
+                opacity: 1; /* Heilt synleg */
+                z-index: 1; /* Lyftar dette bildet nærmast auget */
+            }
+
+            #hund { background-image: url(Hund.jpg) } 
+            #fisk { background-image: url(fisk.jpg) } 
+            #frosk { background-image: url(frosk.jpg) } 
+            #flammer { background-image: url(flammer.jpg) }
+            #ballongferd { background-image: url(ballongferd.jpg) }
+        </style> 
+    </head>
+<body>
+    <div id="natur">
+        <div id="hund"></div> 
+        <div id="fisk"></div> 
+        <div id="frosk"></div> 
+        <div id="flammer"></div> 
+        <div id="ballongferd"></div>
+</body>
+</html>
