@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <title>Musespel</title>
+        <style> /*CSS for musa*/
+            #mus {
+                width: 100px;
+                position: absolute;
+                transition: 0.2s;
+            }
+        </style>
+    </head>
+    
+        <body> <!-- HTML og JavaScript for spelet -->
+            <span id="visPoeng">0 poeng</span>
+            <img id="mus" src="mus.png" >
+    
+            <script>
+                var visPoeng = document.getElementById("visPoeng");
+                var mus = document.getElementById("mus");
+                var poeng = 0;
+        
+                function flyttMeg() {
+                    var xpos = Math.random() * (innerWidth - 100);
+                    var ypos = Math.random() * (innerHeight - 100);
+                    mus.style.left = xpos + "px";
+                    mus.style.top = ypos + "px";
+                    poeng += 10;
+                    visPoeng.innerHTML = poeng + " poeng";
+                }
+            
+                mus.onclick = flyttMeg;
+            </script>
+    </body>
+</html>
